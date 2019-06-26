@@ -78,3 +78,7 @@ swig/java/org/gdal/osr/osrJNI.java
 swig/java/org/gdal/osr/SpatialReference.java
 makegdal14.VC.VC.opendb
 Environment.opt
+Debug/makegdal141.vcxprojAssemblyReference.cache
+Release/makegdal141.vcxprojAssemblyReference.cache
+swig/java/org/gdal/gdal/SWIGTYPE_p_CPLErrorHandler.java
+swig/java/org/gdal/gdal/SWIGTYPE_p_void.java

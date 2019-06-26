@@ -455,9 +455,9 @@ EXPAT_LIB = $(DEV_BASE)/$(EXPAT_DIR)/msvc/$(DEBUGDIR)/expat.lib
 #XERCES_DIR =	c:\warmerda\supportlibs\xerces-c_2_6_0
 XERCES_INCLUDE = -I$(DEV_BASE)/$(XERCES_DIR)/src -I$(DEV_BASE)/$(XERCES_DIR)/src/xercesc
 !IFNDEF DEBUG
-XERCES_LIB = $(DEV_BASE)/$(XERCES_DIR)/projects/Win32/VC11/xerces-all/$(RELEASEDIR)/xerces-c_3.lib
+XERCES_LIB = $(DEV_BASE)/$(XERCES_DIR)/msvc/$(RELEASEDIR)/xerces-c_3.lib
 !ELSE
-XERCES_LIB = $(DEV_BASE)/$(XERCES_DIR)/projects/Win32/VC11/xerces-all/$(DEBUGDIR)/xerces-c_3D.lib
+XERCES_LIB = $(DEV_BASE)/$(XERCES_DIR)/msvc/$(DEBUGDIR)/xerces-c_3D.lib
 !ENDIF
 # Uncomment the following for Interlis support.  Note that a Xercex 2.x
 # is also required (see above).  Also, Interlis support only works with
