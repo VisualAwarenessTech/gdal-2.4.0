@@ -330,6 +330,7 @@ void RegisterOGRGeoPackage()
 "  <Option name='MINY' type='float' description='Minimum Y of area of interest'/>"
 "  <Option name='MAXX' type='float' description='Maximum X of area of interest'/>"
 "  <Option name='MAXY' type='float' description='Maximum Y of area of interest'/>"
+"  <Option name='GPKG_FAST' type='string' description='Set to TRUE to Turn sync and journal off'/>"
 "  <Option name='USE_TILE_EXTENT' type='boolean' description='Use tile extent of content to determine area of interest' default='NO'/>"
 "  <Option name='WHERE' type='string' description='SQL WHERE clause to be appended to tile requests'/>"
 COMPRESSION_OPTIONS
