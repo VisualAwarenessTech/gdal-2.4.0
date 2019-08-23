@@ -955,10 +955,11 @@ int GDALGeoPackageDataset::Open( GDALOpenInfo* poOpenInfo )
 			if(r2)
 				CPLError(CE_Warning, CPLE_AppDefined, "pragma set journal_mode to MEMORY failed on '%s'",
 					m_pszFilename);
+#ifdef _DEBUG
 			if (!r1 && !r2)
 				CPLError(CE_Warning, CPLE_AppDefined, "Synchronous and Journal set to off on '%s'",
 					m_pszFilename);
-
+#endif
 		}
 
         memcpy(&m_nApplicationId, pabyHeader + knApplicationIdPos, 4);
@@ -3540,9 +3541,11 @@ int GDALGeoPackageDataset::Create( const char * pszFilename,
 		if (r2)
 			CPLError(CE_Warning, CPLE_AppDefined, "pragma set journal_mode to MEMORY failed on '%s'",
 				m_pszFilename);
+#ifdef _DEBUG
 		if(!r1 && !r2)
 			CPLError(CE_Warning, CPLE_AppDefined, "Synchronous and Journal set to off on '%s'",
 				m_pszFilename);
+#endif
 	}
     /* Default to synchronous=off for performance for new file */
     if( !bFileExists &&
