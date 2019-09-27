@@ -598,11 +598,13 @@ INGRES_LIB = "$(INGRES_HOME)\lib\iilibapi.lib" \
 
 
 # SQLite Libraries
-SQLITE_INC=-I$(DEV_BASE)\$(SQLITE3_DIR)
+SQLITE_INC=-I$(DEV_BASE)\$(SQLITE3_DIR) -I$(DEV_BASE)\$(SPATIALITE_DIR)\src\headers -DHAVE_SPATIALITE
 !IFNDEF DEBUG
-SQLITE_LIB=$(DEV_BASE)\$(SQLITE3_DIR)\$(RELEASEDIR)\sqlite3.lib
+SQLITE_LIB=$(DEV_BASE)\$(SQLITE3_DIR)\$(RELEASEDIR)\sqlite3.lib \
+	$(DEV_BASE)\$(SPATIALITE_DIR)\$(RELEASEDIR)\libspatialite.lib
 !ELSE
-SQLITE_LIB=$(DEV_BASE)\$(SQLITE3_DIR)\$(DEBUGDIR)\sqlite3.lib
+SQLITE_LIB=$(DEV_BASE)\$(SQLITE3_DIR)\$(DEBUGDIR)\sqlite3.lib \
+	$(DEV_BASE)\$(SPATIALITE_DIR)\$(DEBUGDIR)\libspatialite.lib 
 !ENDIF
 # For spatialite support, try this instead (assuming you grab the libspatialite-amalgamation-2.3.1 and installed it in osgeo4w):
 # The -DSPATIALITE_AMALGAMATION, which cause "spatialite/sqlite3.h" to be included instead of "sqlite3.h" might not be necessary
@@ -614,7 +616,7 @@ SQLITE_LIB=$(DEV_BASE)\$(SQLITE3_DIR)\$(DEBUGDIR)\sqlite3.lib
 # Uncomment following line if libsqlite3 has been compiled with SQLITE_HAS_COLUMN_METADATA=yes
 #SQLITE_HAS_COLUMN_METADATA=yes
 # Uncomment following line if spatialite is 4.1.2 or later
-#SPATIALITE_412_OR_LATER=yes
+SPATIALITE_412_OR_LATER=yes
 
 # PCRE Library (REGEXP support for SQLite) for example from http://sourceforge.net/projects/gnuwin32/files/pcre/7.0/pcre-7.0.exe/download
 PCRE_INC=-I$(DEV_BASE)\$(PCRE_DIR) -I$(DEV_BASE)\$(PCRE_DIR)\msvc -DHAVE_PCRE
