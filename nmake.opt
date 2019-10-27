@@ -848,7 +848,7 @@ WEBP_LIBS = $(DEV_BASE)/$(WEBP_DIR)/$(RELEASEDIR)/libwebp.lib
 !ENDIF
 
 # Uncomment for libxml2 support (for cpl_xml_validate.cpp routines, used optionaly by the GML driver)
-LIBXML2_INC = -I$(DEV_BASE)\$(LIBXML2_DIR)\include
+LIBXML2_INC = -I$(DEV_BASE)\$(LIBXML2_DIR)\include -I$(DEV_BASE)\$(ICONV_DIR)
 !IFDEF DEBUG
 LIBXML2_LIB = $(DEV_BASE)\$(LIBXML2_DIR)\win32\$(DEBUGDIR)\libxml2.lib
 !ELSE
